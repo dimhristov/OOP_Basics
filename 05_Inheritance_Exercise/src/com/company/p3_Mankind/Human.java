@@ -24,6 +24,9 @@ public class Human {
     }
 
     protected void setFirstName(String firstName) {
+        if (firstName == null) {
+            throw new IllegalArgumentException(EXPECTED_UPPER_CASE_LETTER_ARGUMENT_FIRST_NAME);
+        }
         if (!Character.isUpperCase(firstName.charAt(0))) {
             throw new IllegalArgumentException(EXPECTED_UPPER_CASE_LETTER_ARGUMENT_FIRST_NAME);
         } else if (firstName.length() < 4) {

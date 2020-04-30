@@ -16,7 +16,10 @@ public class Student extends Human {
 
 
     protected void setFacultyNumber(String facultyNumber) {
-        if (facultyNumber.length() < 5 || facultyNumber.length() > 10) {
+        if (facultyNumber == null) {
+            throw new IllegalArgumentException(INVALID_FACULTY_NUMBER);
+        }
+        if (facultyNumber.length() < 5 || facultyNumber.length() > 10 ) {
             throw new IllegalArgumentException(INVALID_FACULTY_NUMBER);
         }
         this.facultyNumber = facultyNumber;

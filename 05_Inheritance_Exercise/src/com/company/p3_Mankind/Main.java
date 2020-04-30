@@ -14,13 +14,24 @@ public class Main {
         String[] studentTokens = studentInput.split("\\s+");
         String studentFirstName = studentTokens[0];
         String studentLastName = studentTokens[1];
-        String facultyNumber = studentTokens[2];
-        
+        String facultyNumber = null;
+        if (studentTokens.length > 2) {
+            facultyNumber = studentTokens[2];
+        }
+
+
+
         String[] workerTokens = workerInput.split("\\s+");
         String workerFirstName = workerTokens[0];
         String workerLastName = workerTokens[1];
-        double weekSalary = Double.parseDouble(workerTokens[2]);
-        double hoursPerDay = Double.parseDouble(workerTokens[3]);
+        double weekSalary = 0.0;
+        double hoursPerDay = 0.0;
+        if (workerTokens.length > 2) {
+            weekSalary = Double.parseDouble(workerTokens[2]);
+        }
+        if (workerTokens.length > 3) {
+            hoursPerDay = Double.parseDouble(workerTokens[3]);
+        }
 
         try {
             Human student = new Student(studentFirstName, studentLastName, facultyNumber);
